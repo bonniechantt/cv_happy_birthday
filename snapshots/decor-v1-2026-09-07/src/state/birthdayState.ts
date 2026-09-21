@@ -1,0 +1,8 @@
+export enum BirthdayState {
+  LOADING = 'LOADING',
+  READY = 'READY',
+  PARTY_BUILDING = 'PARTY_BUILDING',
+  CAKE = 'CAKE',
+  CANDLE_BLOW = 'CANDLE_BLOW',
+  CELEBRATION = 'CELEBRATION',
+}

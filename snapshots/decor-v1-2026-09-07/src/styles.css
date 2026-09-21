@@ -1,0 +1,25 @@
+:root { font-family: Inter, Helvetica, Arial, sans-serif; color: #f6f3ed; background: #8f8a80; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-width: 320px; width: 100%; height: 100%; overflow: hidden; }
+button { font: inherit; }
+.experience { position: relative; width: 100%; height: 100%; overflow: hidden; background: #a49e91; isolation: isolate; }
+.experience::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 4; box-shadow: inset 0 0 14vw rgba(48, 43, 36, .23); }
+.camera-view { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); filter: saturate(.78) sepia(.08) contrast(.96) brightness(1.03); }
+.effects-canvas { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.grain { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: .04; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+.intro { position: absolute; inset: 0; z-index: 5; display: grid; place-content: center; text-align: center; padding: 24px; background: radial-gradient(circle at 50% 44%, rgba(241,237,226,.15), transparent 34%), linear-gradient(125deg, #ada89e, #837e74); }
+.eyebrow { margin: 0 0 25px; font-size: 10px; letter-spacing: .28em; color: rgba(255,255,255,.65); }
+h1 { margin: 0; font-size: clamp(48px, 8vw, 108px); font-weight: 300; letter-spacing: .08em; line-height: .86; text-shadow: 0 4px 28px rgba(54,50,44,.14); }
+h1 i { font-family: Georgia, serif; font-weight: 400; letter-spacing: .01em; }
+.permission { margin: 40px 0 26px; font-size: 12px; line-height: 1.8; letter-spacing: .08em; color: rgba(255,255,255,.75); }
+.permission span { font-size: 10px; letter-spacing: .04em; color: rgba(255,255,255,.45); }
+.intro button { justify-self: center; border: 1px solid rgba(255,255,255,.5); border-radius: 99px; padding: 12px 25px; color: white; background: rgba(255,255,255,.08); cursor: pointer; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; transition: background .25s ease, transform .25s ease; }
+.intro button:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+.error { max-width: 360px; margin: 20px auto 0; color: #f9d8d2; font-size: 11px; line-height: 1.5; }
+.whisper { position: absolute; z-index: 5; bottom: clamp(32px, 8vh, 76px); left: 50%; transform: translate(-50%, 8px); min-width: 240px; text-align: center; font-family: Georgia, serif; font-size: clamp(13px, 1.4vw, 17px); font-style: italic; letter-spacing: .16em; color: rgba(255,255,255,.82); opacity: 0; transition: opacity .7s ease, transform .7s ease; text-shadow: 0 2px 15px rgba(0,0,0,.18); pointer-events: none; }
+.whisper.visible { opacity: 1; transform: translate(-50%, 0); }
+.state-celebration .whisper { font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-size: clamp(16px, 2.2vw, 29px); font-weight: 300; letter-spacing: .3em; bottom: 11vh; }
+.debug-panel { position: absolute; z-index: 8; top: 16px; right: 16px; width: 205px; padding: 12px 14px; color: #f5f2e9; background: rgba(35,32,28,.72); backdrop-filter: blur(12px); font: 10px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.debug-panel div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.debug-panel b { font-weight: 400; color: #ffd5a4; }
+@media (max-width: 600px) { .debug-panel { top: auto; bottom: 10px; left: 10px; right: 10px; width: auto; columns: 2; column-gap: 18px; opacity: .9; } .debug-panel div { break-inside: avoid; } }
