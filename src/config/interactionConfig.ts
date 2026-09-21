@@ -1,0 +1,15 @@
+export const interactionConfig = {
+  smoothing: 0.22,
+  handTrackingIntervalMs: 70,
+  cakeCloseGap: 0.085,
+  cakeOpenGap: 0.145,
+  cakeMinimumExpansion: 0.025,
+  palmOpenConfirmFrames: 2,
+  palmOpenGraceMs: 220,
+  palmSwipeDurationMs: 200,
+  palmSwipePauseMs: 120,
+  palmSwipeStepThreshold: 0.003,
+  palmSwipeMinTravel: 0.1,
+  pointUpDebounceMs: 300,
+  balloonIntervalMs: 1000,
+} as const
