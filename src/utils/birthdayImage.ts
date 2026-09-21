@@ -141,7 +141,7 @@ export function loadBirthdayCutout(scale = 2) {
       const image = new Image()
       image.onload = () => resolve(prepareBirthdayCutout(image, scale))
       image.onerror = () => resolve(null)
-      image.src = '/assets/happy-birthday-source.png'
+      image.src = `${import.meta.env.BASE_URL}assets/happy-birthday-source.png`
     })
   }
   return birthdayCutoutPromise

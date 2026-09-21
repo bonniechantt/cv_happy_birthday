@@ -3,8 +3,8 @@ import type { Point } from '../types'
 
 type TrackingResult = { landmarks: Point[][]; handedness: string[][]; gestures: string[][] }
 
-const wasmRoot = '/wasm'
-const modelUrl = '/models/gesture_recognizer.task'
+const wasmRoot = `${import.meta.env.BASE_URL}wasm`
+const modelUrl = `${import.meta.env.BASE_URL}models/gesture_recognizer.task`
 
 export class HandTracking {
   private recognizer: GestureRecognizer | null = null

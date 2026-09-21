@@ -1,7 +1,7 @@
 import { FilesetResolver, HandLandmarker } from '@mediapipe/tasks-vision'
 
 const wasmRoot = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.35/wasm'
-const modelUrl = '/models/hand_landmarker.task'
+const modelUrl = `${import.meta.env.BASE_URL}models/hand_landmarker.task`
 let landmarker: HandLandmarker | null = null
 
 self.onmessage = async (event: MessageEvent<{ type: string; image?: ImageBitmap; timestamp?: number }>) => {

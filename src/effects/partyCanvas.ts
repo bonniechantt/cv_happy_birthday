@@ -98,7 +98,7 @@ export class PartyCanvas {
   constructor() {
     const image = new Image()
     image.onload = () => { this.cakeImageReady = true }
-    image.src = '/assets/pink-ribbon-cake-cutout.png'
+    image.src = `${import.meta.env.BASE_URL}assets/pink-ribbon-cake-cutout.png`
     this.cakeImage = image
 
   }

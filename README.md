@@ -2,6 +2,14 @@
 
 一个纯前端、浏览器本地处理的生日主题摄像头手势互动体验。
 
+## 公网访问
+
+当前版本通过 GitHub Pages 自动发布：
+
+`https://bonniechantt.github.io/cv_happy_birthday/`
+
+每次推送到 `main` 分支后，GitHub Actions 会自动构建并更新网页。
+
 ## 运行
 
 ```bash
