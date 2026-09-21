@@ -1,0 +1,33 @@
+:root { font-family: Inter, Helvetica, Arial, sans-serif; color: #f6f3ed; background: #8f8a80; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-width: 320px; width: 100%; height: 100%; overflow: hidden; }
+button { font: inherit; }
+.experience { position: relative; width: 100%; height: 100%; overflow: hidden; background: #a49e91; isolation: isolate; }
+.experience::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 4; box-shadow: inset 0 0 14vw rgba(48, 43, 36, .23); }
+.camera-view { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); filter: saturate(.78) sepia(.08) contrast(.96) brightness(1.03); }
+.effects-canvas { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.grain { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: .04; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+.birthday-wordmark-layer { position: absolute; z-index: 6; top: clamp(18px, 5.5vh, 56px); left: 50%; width: min(630px, 53.2vw); pointer-events: none; opacity: 0; transform: translate(-50%, -7px); transition: opacity .3s ease-out, transform .3s ease-out; }
+.birthday-wordmark-layer.visible { opacity: 1; transform: translate(-50%, 0); }
+.celebration-wordmark { display: block; width: 100%; height: auto; filter: drop-shadow(0 7px 10px rgba(75,34,50,.16)); animation: birthday-wordmark-float 4.8s .3s ease-in-out infinite; }
+@keyframes birthday-wordmark-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.intro { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; overflow: hidden; text-align: center; padding: 24px; color: #75495a; background-color: #f4e5d8; background-image: radial-gradient(circle, rgba(193,111,117,.3) 0 4px, transparent 4.8px), radial-gradient(circle at 50% 12%, rgba(255,255,255,.82), transparent 42%), linear-gradient(145deg, rgba(255,255,255,.16), rgba(215,151,151,.08)); background-size: 48px 48px, 100% 100%, 100% 100%; background-position: 0 0, 0 0, 0 0; }
+.intro::before { content: ''; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 100px rgba(115,64,68,.14), inset 0 0 0 1px rgba(255,255,255,.42); }
+.intro-card { position: relative; z-index: 2; display: grid; justify-items: center; width: min(860px, 100%); padding: clamp(28px, 6vh, 64px) 24px 32px; }
+.intro-wordmark { display: block; width: min(760px, 82vw); height: auto; opacity: 0; filter: none; animation: wordmark-in .9s .1s ease-out forwards, wordmark-float 4.8s 1s ease-in-out infinite; }
+@keyframes wordmark-in { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes wordmark-float { 0%, 100% { transform: translateY(0) rotate(-.4deg); } 50% { transform: translateY(-5px) rotate(.4deg); } }
+.permission { margin: clamp(30px, 5vh, 48px) 0 22px; font-size: 12px; line-height: 1.8; letter-spacing: .08em; color: #8d5c6c; }
+.permission span { font-size: 10px; letter-spacing: .04em; color: #b5808d; }
+.intro button { display: grid; justify-items: center; min-width: 192px; border: 1px solid rgba(255,255,255,.9); border-radius: 999px; padding: 13px 28px 12px; color: #fff; background: linear-gradient(180deg, #ffb5cb 0%, #ec83a5 58%, #d96a91 100%); box-shadow: inset 0 2px 5px rgba(255,255,255,.56), 0 10px 24px rgba(191,91,123,.23), 0 3px 0 rgba(178,69,104,.16); cursor: pointer; transition: transform .25s ease, filter .25s ease, box-shadow .25s ease; }
+.intro button strong { font-size: 12px; font-weight: 800; letter-spacing: .24em; line-height: 1.2; text-transform: uppercase; }
+.intro button small { margin-top: 4px; font-size: 9px; letter-spacing: .12em; opacity: .82; }
+.intro button:hover { filter: brightness(1.06); transform: translateY(-3px); box-shadow: inset 0 2px 5px rgba(255,255,255,.62), 0 14px 28px rgba(191,91,123,.28), 0 3px 0 rgba(178,69,104,.16); }
+.error { max-width: 360px; margin: 20px auto 0; color: #b04468; font-size: 11px; line-height: 1.5; }
+.whisper { position: absolute; z-index: 5; bottom: clamp(32px, 8vh, 76px); left: 50%; transform: translate(-50%, 8px); min-width: 240px; text-align: center; font-family: Georgia, serif; font-size: clamp(13px, 1.4vw, 17px); font-style: italic; letter-spacing: .16em; color: rgba(255,255,255,.82); opacity: 0; transition: opacity .7s ease, transform .7s ease; text-shadow: 0 2px 15px rgba(0,0,0,.18); pointer-events: none; }
+.whisper.visible { opacity: 1; transform: translate(-50%, 0); }
+.state-celebration .whisper { font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-size: clamp(16px, 2.2vw, 29px); font-weight: 300; letter-spacing: .3em; bottom: 11vh; }
+.debug-panel { position: absolute; z-index: 8; top: 16px; right: 16px; width: 205px; padding: 12px 14px; color: #f5f2e9; background: rgba(35,32,28,.72); backdrop-filter: blur(12px); font: 10px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.debug-panel div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.debug-panel b { font-weight: 400; color: #ffd5a4; }
+@media (max-width: 600px) { .debug-panel { top: auto; bottom: 10px; left: 10px; right: 10px; width: auto; columns: 2; column-gap: 18px; opacity: .9; } .debug-panel div { break-inside: avoid; } }
